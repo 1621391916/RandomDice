@@ -4,6 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'pages/HomePage/HomePage.dart';
 import 'pages/CommunityPage/CommunityPage.dart';
 import 'pages/MyselfPage/MyselfPage.dart';
+import 'routes.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +16,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MainFunc(title: 'Flutter Demo Home Page'),
+      // initialRoute: '/home',     //初始化的时候加载的路由
+      onGenerateRoute: onGenerateRoute
     );
   }
 }

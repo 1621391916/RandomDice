@@ -14,8 +14,8 @@ class _MyselfPageState extends State<MyselfPage> {
     print('------main, ----build');
     return Container(
       alignment: Alignment.center,
-      color: Colors.blue,
-      child: const Text("MyselfPage", style: TextStyle(fontSize: 20, color: Colors.white),),
+      color: Colors.grey[100],
+      child: const Text("MyselfPage", style: TextStyle(fontSize: 20, color: Colors.black),),
     );
   }
 }

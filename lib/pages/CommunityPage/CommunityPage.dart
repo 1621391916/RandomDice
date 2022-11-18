@@ -14,8 +14,8 @@ class _CommunityPageState extends State<CommunityPage> {
     print('------main, ----build');
     return Container(
       alignment: Alignment.center,
-      color: Colors.green,
-      child: const Text("CommunityPage", style: TextStyle(fontSize: 20, color: Colors.white),),
+      color: Colors.grey[100],
+      child: const Text("CommunityPage", style: TextStyle(fontSize: 20, color: Colors.black),),
     );
   }
 }
