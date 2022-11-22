@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.RandomDice.random_dice_game">
    <application
-        android:label="random_dice_game"
+        android:label="随机骰子"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
