@@ -11,7 +11,6 @@ class _MyselfPageState extends State<MyselfPage> {
 
   @override
   Widget build(BuildContext context) {
-    print('------main, ----build');
     return Container(
       alignment: Alignment.center,
       color: Colors.grey[100],
