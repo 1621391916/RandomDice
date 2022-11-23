@@ -409,7 +409,7 @@ class RoomUnit extends StatelessWidget {
                       ),
                       Expanded(
                         flex: 1,
-                        child: Text('房价人数：$roomPeopleNum/$roomCapacity')
+                        child: Text('房间人数：$roomPeopleNum/$roomCapacity')
                       ),
                     ],
                   )
