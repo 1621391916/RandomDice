@@ -5,8 +5,10 @@ import 'pages/HomePage/HomePage.dart';
 import 'pages/CommunityPage/CommunityPage.dart';
 import 'pages/MyselfPage/MyselfPage.dart';
 import 'routes.dart';
+// import 'package:stack_trace/stack_trace.dart';
 
 void main() => runApp(MyApp());
+// void main() => Future.delayed(Duration(seconds: 1)).then((_) => runApp(MyApp()));
 
 class MyApp extends StatelessWidget {
   @override
