@@ -143,7 +143,7 @@ class RecommendUnit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    var mainBody = Container(
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black26),
         color: Colors.white,
@@ -202,6 +202,12 @@ class RecommendUnit extends StatelessWidget {
           ],
         ),
       ),
+    );
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/chooseCharacter');
+      },
+      child: mainBody,
     );
   }
 }
@@ -352,7 +358,7 @@ class RoomUnit extends StatelessWidget {
   dynamic cover;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    var mainBody = Container(
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black26),
         color: Colors.white,
@@ -419,6 +425,12 @@ class RoomUnit extends StatelessWidget {
           )
         ],
       ),
+    );
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/chooseCharacter');
+      },
+      child: mainBody,
     );
   }
 }
