@@ -4,13 +4,17 @@ import './pages/HomePage/HomePage.dart';
 import './pages/CommunityPage/CommunityPage.dart';
 import './pages/MyselfPage/MyselfPage.dart';
 import './pages/HomePage/MatchGamePage.dart';
+import './pages/HomePage/ChooseCharacterPage.dart';
+import './pages/HomePage/CreateCharacterPage.dart';
 
 //配置路由,定义Map类型的routes,Key为String类型，Value为Function类型
 final Map<String,Function> routes={
-      '/home':(context)=>const HomePage(),
-      '/community':(context)=>const CommunityPage(),
-      '/myself':(context)=>const MyselfPage(),
-      '/match':(context,{arguments})=>const MatchGamePage(),
+  '/home':(context)=>const HomePage(),
+  '/community':(context)=>const CommunityPage(),
+  '/myself':(context)=>const MyselfPage(),
+  '/match':(context,{arguments})=>const MatchGamePage(),
+  '/chooseCharacter': (context,{arguments})=>const ChooseCharacterPage(),
+  '/createCharacter': (context,{arguments})=>const CreateCharacterPage(),
 };
 
 //固定写法
