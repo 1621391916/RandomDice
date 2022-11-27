@@ -118,7 +118,7 @@ class CreateRoomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: (){},
+      onPressed: (){Navigator.pushNamed(context, '/createRoom');},
       style: ButtonStyle(
         textStyle: MaterialStateProperty.all(const TextStyle(fontSize: 15)),
         backgroundColor: MaterialStateProperty.all(Colors.lightGreen[400]),
@@ -155,7 +155,7 @@ class CreateScriptButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: (){},
+      onPressed: (){Navigator.pushNamed(context, '/createScript');},
       style: ButtonStyle(
         textStyle: MaterialStateProperty.all(const TextStyle(fontSize: 15)),
         backgroundColor: MaterialStateProperty.all(Colors.lightGreen[600]),
