@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(10.0),
         children: const <Widget>[
           TopButtonsWidget(),
           RecommendSlidWidget(),
@@ -203,7 +203,7 @@ class _RecommendSlidWidgetState extends State<RecommendSlidWidget> {
         child: Flex(
           direction: Axis.vertical,
           children: [
-            Expanded(flex: 5, child: Row(children: const [Text('精选')],)),
+            Expanded(flex: 5, child: Row(children: const [Text('精选', style: TextStyle(fontSize: 22))],)),
             const Spacer(flex: 1,),
             Expanded(
               flex: 20,
@@ -254,32 +254,37 @@ class RecommendUnit extends StatelessWidget {
   Widget build(BuildContext context) {
     var mainBody = Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black26),
+        // border: Border.all(color: Colors.black26),
         color: Colors.white,
-        borderRadius: BorderRadius.circular((10)),
+        borderRadius: BorderRadius.circular((12)),
+        boxShadow: const [
+          BoxShadow(
+              color: Color(0xFFD5D5D5),
+              offset: Offset(2.0, 2.0),
+              blurRadius: 6.0, spreadRadius: 1.0
+          ),
+        ],
       ),
       width: 300,
       height: 200,
-      margin: const EdgeInsets.only(right: 10.0),
+      margin: const EdgeInsets.all(6.0),
       child: Padding(
         padding: const EdgeInsets.all(5.0),
-        child: Flex(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
-          direction: Axis.horizontal,
           children: [
             Expanded(
-              flex: 10,
+              flex: 15,
               child: Image(
                 image: cover,//NetworkImage(coverUrl),
-                width: 100,
+                // width: 80,
               )
             ),
             const Spacer(flex: 1,),
             Expanded(
-              flex: 10,
-              child: Flex(
-                direction: Axis.vertical,
+              flex: 20,
+              child: Column(
                 children: [
                   // 标题和评分
                   Expanded(
@@ -287,8 +292,16 @@ class RecommendUnit extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text(name),
-                        Text(score.toString())
+                        Expanded(flex: 4, child: Text(
+                          name,
+                          style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                        )),
+                        const Spacer(flex: 1,),
+                        Expanded(flex: 2, child: Text(
+                          score.toString(),
+                          style: const TextStyle(color: Colors.red,),
+                        )),
+
                       ],
                     )
                   ),
@@ -297,13 +310,27 @@ class RecommendUnit extends StatelessWidget {
                     flex: 1,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
-                      children: List.generate(tags.length, (i) => Text(tags[i])),
+                      children: List.generate(tags.length, (i) =>
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black26),
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular((10)),
+                          ),
+                          margin: const EdgeInsets.only(right: 5),
+                          padding: const EdgeInsets.only(right: 5, left: 5),
+                          child: Text(tags[i], style: const TextStyle(fontSize: 12.0,),),
+                        )
+                      ),
                     )
                   ),
                   // 即刻加入
-                  const Expanded(
+                  Expanded(
                     flex: 1,
-                    child: Text('即刻加入')
+                    child: Container(
+                      alignment: Alignment.centerRight,
+                      child: const Text('即刻加入'),
+                    )
                   ),
                 ],
               )
@@ -336,78 +363,77 @@ class _RoomFilterWidgetState extends State<RoomFilterWidget> {
   int? difficultyTypeValue;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 0.0, bottom: 0.0),
-      child: SizedBox(
-        height: 70.0,
-        child: Flex(
-          direction: Axis.vertical,
-          children: [
-            Expanded(flex: 10, child: Row(children: const [Text('房间')],)),
-            // const Spacer(flex: 1,),
-            Expanded(
-              flex: 20,
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 10,
-                    child: DropdownButton(
-                      value: sortTypeValue,
-                      hint: const Text('排序方式'),
-                      onChanged: (newValue) {
-                        setState(() {
-                          sortTypeValue = newValue;
-                        });
-                      },
-                      items: const [
-                        DropdownMenuItem(value:1, child: Text('剧本评分')),
-                        DropdownMenuItem(value:2, child: Text('KP评分')),
-                      ],
-                    ),
+    return Container(
+      height: 90.0,
+      padding: const EdgeInsets.only(left: 10),
+
+      child: Column(
+        // direction: Axis.vertical,
+        children: [
+          Expanded(flex: 15, child: Row(children: const [Text('房间', style: TextStyle(fontSize: 22))],)),
+          // const Spacer(flex: 1,),
+          Expanded(
+            flex: 10,
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 10,
+                  child: DropdownButton(
+                    value: sortTypeValue,
+                    hint: const Text('排序方式'),
+                    onChanged: (newValue) {
+                      setState(() {
+                        sortTypeValue = newValue;
+                      });
+                    },
+                    items: const [
+                      DropdownMenuItem(value:1, child: Text('剧本评分')),
+                      DropdownMenuItem(value:2, child: Text('KP评分')),
+                    ],
                   ),
-                  const Spacer(flex: 2,),
-                  Expanded(
-                    flex: 10,
-                    child: DropdownButton(
-                      value: scriptTypeValue,
-                      hint: const Text('类型'),
-                      onChanged: (newValue) {
-                        setState(() {
-                          scriptTypeValue = newValue;
-                        });
-                      },
-                      items: const [
-                        DropdownMenuItem(value:1, child: Text('不限')),
-                        DropdownMenuItem(value:2, child: Text('情感本')),
-                        DropdownMenuItem(value:3, child: Text('搞笑本')),
-                        DropdownMenuItem(value:4, child: Text('恐怖本')),
-                      ],
-                    ),
+                ),
+                const Spacer(flex: 2,),
+                Expanded(
+                  flex: 10,
+                  child: DropdownButton(
+                    value: scriptTypeValue,
+                    hint: const Text('类型'),
+                    onChanged: (newValue) {
+                      setState(() {
+                        scriptTypeValue = newValue;
+                      });
+                    },
+                    items: const [
+                      DropdownMenuItem(value:1, child: Text('不限')),
+                      DropdownMenuItem(value:2, child: Text('情感本')),
+                      DropdownMenuItem(value:3, child: Text('搞笑本')),
+                      DropdownMenuItem(value:4, child: Text('恐怖本')),
+                    ],
                   ),
-                  const Spacer(flex: 2,),
-                  Expanded(
-                    flex: 10,
-                    child: DropdownButton(
-                      hint: const Text('难度'),
-                      value: difficultyTypeValue,
-                      onChanged: (newValue) {
-                        setState(() {
-                          difficultyTypeValue = newValue;
-                        });
-                      },
-                      items: const [
-                        DropdownMenuItem(value:1, child: Text('高')),
-                        DropdownMenuItem(value:2, child: Text('中')),
-                        DropdownMenuItem(value:3, child: Text('低')),
-                      ],
-                    ),
+                ),
+                const Spacer(flex: 2,),
+                Expanded(
+                  flex: 10,
+                  child: DropdownButton(
+                    hint: const Text('难度'),
+                    value: difficultyTypeValue,
+                    onChanged: (newValue) {
+                      setState(() {
+                        difficultyTypeValue = newValue;
+                      });
+                    },
+                    items: const [
+                      DropdownMenuItem(value:1, child: Text('高')),
+                      DropdownMenuItem(value:2, child: Text('中')),
+                      DropdownMenuItem(value:3, child: Text('低')),
+                    ],
                   ),
-                  const Spacer(flex: 6,),
-                ],
-              )
+                ),
+                const Spacer(flex: 6,),
+              ],
             )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
@@ -469,9 +495,16 @@ class RoomUnit extends StatelessWidget {
   Widget build(BuildContext context) {
     var mainBody = Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black26),
+        // border: Border.all(color: Colors.black26),
         color: Colors.white,
         borderRadius: BorderRadius.circular((10)),
+        boxShadow: const [
+          BoxShadow(
+              color: Color(0xECDAD8D8),
+              offset: Offset(2.0, 2.0),
+              blurRadius: 6.0, spreadRadius: 1.0
+          ),
+        ],
       ),
       margin: const EdgeInsets.only(bottom: 20.0),
       padding: const EdgeInsets.only(left: 0.0, bottom: 12),
@@ -483,10 +516,9 @@ class RoomUnit extends StatelessWidget {
             child: Row(
               children: [
                 const Spacer(flex: 1,),
-                Expanded(flex: 6, child: Text('《$name》')),
+                Expanded(flex: 6, child: Text('《$name》', style: TextStyle(fontWeight: FontWeight.bold),)),
                 const Spacer(flex: 4,),
-                const Expanded(flex: 4, child: Text('评分：')),
-                Expanded(flex: 6, child: Text(score.toString()))
+                Expanded(flex: 4, child: Text('评分： ${score.toString()}')),
               ],
             )
           ),

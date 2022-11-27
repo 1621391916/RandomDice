@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-// import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:random_dice_game/utils.dart';
 
 class CommunityPage extends StatefulWidget {
   const CommunityPage({Key? key}) : super(key: key);
@@ -65,7 +65,7 @@ class _CommunityPageState extends State<CommunityPage> {
     return Expanded(
       child: ListView(
         scrollDirection: Axis.horizontal,
-          children:<Widget>[
+          children:const <Widget>[
             Text("一九七零年于海登堡(Heidelberg)举行的世界科幻大会中，奇幻战略游戏“善恶大决战”(Armageddon)展示，游戏的过程...")]
 
       )
@@ -97,13 +97,14 @@ class _CommunityPageState extends State<CommunityPage> {
             children: <Widget>[
               CircleAvatar(
                 radius: 20,
-                backgroundColor: Color(0xFFCCCCCC),
-                // backgroundImage: NetworkImage(data.userImgUrl),
+                backgroundColor: Colors.grey,
+                // child: Image(image: getImageFromPathOrUrl("assets/avatars/avatar3.jpg")),
+                backgroundImage: getImageFromPathOrUrl("assets/avatars/avatar3.jpg"),
               ),
-              Padding(padding: EdgeInsets.only(left: 8)),
+              const Padding(padding: EdgeInsets.only(left: 8)),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+                children: const <Widget>[
                   Text(
                     "Priceless",
                     style: TextStyle(
@@ -111,13 +112,14 @@ class _CommunityPageState extends State<CommunityPage> {
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF333333),
                     ),
+                    textAlign: TextAlign.center,
                   ),
                   Padding(padding: EdgeInsets.only(top: 2)),
                 ],
               ),
             ],
           ),
-          Text(
+          const Text(
             "11:28",
             style: TextStyle(
               fontSize: 13,
@@ -132,13 +134,14 @@ class _CommunityPageState extends State<CommunityPage> {
   //文字区域
   Widget renderTitle(){
     return Container(
+      padding: EdgeInsets.only(left: 10, top: 10),
       child:
         Row(
-          children: <Widget>[
+          children: const <Widget>[
             Text("海登堡大战",style: TextStyle(
               fontSize: 15
             ),),
-          Padding(padding: EdgeInsets.only(top: 30,left: 8,right: 8))
+            // Padding(padding: EdgeInsets.only(top: 30,left: 8,right: 8))
           ],
         )
     );
@@ -147,16 +150,15 @@ class _CommunityPageState extends State<CommunityPage> {
   //发布图片区域
   Widget renderImage(){
     return Container(
+      padding: EdgeInsets.only(left: 10),
       child:
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Row(
               children: <Widget>[
-                Image.asset("assets/images/1.jpg",fit: BoxFit.fitWidth,height: 80),
+                Image.asset("assets/images/2.jpg",fit: BoxFit.fitWidth,height: 80),
                 Padding(padding: EdgeInsets.only(top: 100,bottom: 10,right: 50,left: 50)),],),
-
-
 
         ],
       ),
@@ -166,12 +168,13 @@ class _CommunityPageState extends State<CommunityPage> {
   // 内容区域
   Widget renderWord(){
     return Container(
-        child:
-        Column(
-          children: <Widget>[
-            Text("一九七零年于海登堡(Heidelberg)举行的世界科幻大会中，奇幻战略游戏“善恶大决战”(Armageddon)展示，游戏的过程...")
-          ],
-        )
+      padding: EdgeInsets.only(left: 10),
+      child:
+      Column(
+        children: const <Widget>[
+          Text("一九七零年于海登堡(Heidelberg)举行的世界科幻大会中，奇幻战略游戏“善恶大决战”(Armageddon)展示，游戏的过程...")
+        ],
+      )
     );
   }
 
@@ -185,7 +188,7 @@ class _CommunityPageState extends State<CommunityPage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Row(
-            children: <Widget>[
+            children: const <Widget>[
               Text("恐怖·9809阅读",style: TextStyle(color: Colors.grey),),
               Padding(padding: EdgeInsets.only(left: 6,right: 20)),
 
@@ -193,7 +196,7 @@ class _CommunityPageState extends State<CommunityPage> {
           ),
 
           Row(
-            children: <Widget>[
+            children: const <Widget>[
               Icon(
                 Icons.message,
                 size: 16,
@@ -210,7 +213,7 @@ class _CommunityPageState extends State<CommunityPage> {
             ],
           ),
           Row(
-            children: <Widget>[
+            children: const <Widget>[
               Icon(
                 Icons.favorite,
                 size: 16,
@@ -236,7 +239,18 @@ class _CommunityPageState extends State<CommunityPage> {
     return Container(
         margin:EdgeInsets.all(16),
         alignment: Alignment.center,
-        color: Colors.grey[100],
+        decoration: BoxDecoration(
+          // border: Border.all(color: Colors.black26),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular((10)),
+          boxShadow: const [
+            BoxShadow(
+                color: Color(0xECDAD8D8),
+                offset: Offset(2.0, 2.0),
+                blurRadius: 6.0, spreadRadius: 1.0
+            ),
+          ],
+        ),
         child:
         Column(crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
@@ -254,7 +268,18 @@ class _CommunityPageState extends State<CommunityPage> {
     return Container(
         margin:EdgeInsets.all(16),
         alignment: Alignment.center,
-        color: Colors.grey[100],
+        decoration: BoxDecoration(
+          // border: Border.all(color: Colors.black26),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular((10)),
+          boxShadow: const [
+            BoxShadow(
+                color: Color(0xECDAD8D8),
+                offset: Offset(2.0, 2.0),
+                blurRadius: 6.0, spreadRadius: 1.0
+            ),
+          ],
+        ),
         child:
         Column(crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
@@ -272,7 +297,18 @@ class _CommunityPageState extends State<CommunityPage> {
     return Container(
       margin:EdgeInsets.all(16),
       alignment: Alignment.center,
-      color: Colors.grey[100],
+      decoration: BoxDecoration(
+          // border: Border.all(color: Colors.black26),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular((10)),
+          boxShadow: const [
+            BoxShadow(
+                color: Color(0xECDAD8D8),
+                offset: Offset(2.0, 2.0),
+                blurRadius: 6.0, spreadRadius: 1.0
+            ),
+          ],
+        ),
       child:
       Column(crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
@@ -297,7 +333,7 @@ class _CommunityPageState extends State<CommunityPage> {
                 isScrollable:true,
                 labelColor: Colors.pink,
                 unselectedLabelColor: Colors.black,
-                tabs: <Widget>[
+                tabs: const <Widget>[
                   Tab(text: "推荐"),
                   Tab(text: "硬核"),
                   Tab(text: "悬疑"),
@@ -311,6 +347,7 @@ class _CommunityPageState extends State<CommunityPage> {
             body: TabBarView(
               children: <Widget>[
                 ListView(
+                  physics: const BouncingScrollPhysics(),
                         children: [
                           // this.DailyRec(),
                           this.UserInfo_1(),
@@ -321,6 +358,7 @@ class _CommunityPageState extends State<CommunityPage> {
                         ),
 
                 ListView(
+                  physics: const BouncingScrollPhysics(),
                     children:[
                       Column(crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
@@ -332,6 +370,7 @@ class _CommunityPageState extends State<CommunityPage> {
                     ]
                 ),
                 ListView(
+                  physics: const BouncingScrollPhysics(),
                     children:[
                       Column(crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
@@ -343,6 +382,7 @@ class _CommunityPageState extends State<CommunityPage> {
                     ]
                 ),
                 ListView(
+                  physics: const BouncingScrollPhysics(),
                     children:[
                       Column(crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
@@ -354,6 +394,7 @@ class _CommunityPageState extends State<CommunityPage> {
                     ]
                 ),
                 ListView(
+                  physics: const BouncingScrollPhysics(),
                     children:[
                       Column(crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
@@ -365,6 +406,7 @@ class _CommunityPageState extends State<CommunityPage> {
                     ]
                 ),
                 ListView(
+                  physics: const BouncingScrollPhysics(),
                     children:[
                       Column(crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
@@ -376,6 +418,7 @@ class _CommunityPageState extends State<CommunityPage> {
                     ]
                 ),
                 ListView(
+                  physics: const BouncingScrollPhysics(),
                     children:[
                       Column(crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[

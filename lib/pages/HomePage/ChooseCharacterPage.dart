@@ -170,14 +170,28 @@ class CharacterCardUnit extends StatefulWidget {
 class _CharacterCardUnitState extends State<CharacterCardUnit> {
 
   var BoxDecoration_unchoosed = BoxDecoration(
-    border: Border.all(color: Colors.black26),
+    // border: Border.all(color: Colors.black26),
     color: Colors.white,
     borderRadius: BorderRadius.circular((10)),
+    boxShadow: const [
+      BoxShadow(
+          color: Color(0xFFD5D5D5),
+          offset: Offset(2.0, 2.0),
+          blurRadius: 6.0, spreadRadius: 1.0
+      ),
+    ],
   );
   var BoxDecoration_choosed = BoxDecoration(
     border: Border.all(color: Colors.orange),
     color: Colors.orange,
     borderRadius: BorderRadius.circular((10)),
+    boxShadow: const [
+      BoxShadow(
+          color: Color(0xFFD5D5D5),
+          offset: Offset(2.0, 2.0),
+          blurRadius: 6.0, spreadRadius: 1.0
+      ),
+    ],
   );
 
   @override

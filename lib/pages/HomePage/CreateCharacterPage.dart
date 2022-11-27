@@ -10,6 +10,9 @@ class CreateCharacterPage extends StatefulWidget {
 class _CreateCharacterPageState extends State<CreateCharacterPage> {
   @override
   Widget build(BuildContext context) {
+    var mainBody = Container(
+
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text("创建角色"),
@@ -23,9 +26,7 @@ class _CreateCharacterPageState extends State<CreateCharacterPage> {
           );
         }),
       ),
-      body: const Center(
-        child: Text('创建角色'),
-      ),
+      body: mainBody
     );
   }
 }

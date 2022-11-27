@@ -95,6 +95,7 @@ class _CreateScriptPageState extends State<CreateScriptPage> {
           );
         }),
       ),
+      resizeToAvoidBottomInset: false,
       body: mainBody
     );
   }
