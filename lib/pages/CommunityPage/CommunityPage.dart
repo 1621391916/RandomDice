@@ -298,17 +298,17 @@ class _CommunityPageState extends State<CommunityPage> {
       margin:EdgeInsets.all(16),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          // border: Border.all(color: Colors.black26),
-          color: Colors.white,
-          borderRadius: BorderRadius.circular((10)),
-          boxShadow: const [
-            BoxShadow(
-                color: Color(0xECDAD8D8),
-                offset: Offset(2.0, 2.0),
-                blurRadius: 6.0, spreadRadius: 1.0
-            ),
-          ],
-        ),
+        // border: Border.all(color: Colors.black26),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular((10)),
+        boxShadow: const [
+          BoxShadow(
+              color: Color(0xECDAD8D8),
+              offset: Offset(2.0, 2.0),
+              blurRadius: 6.0, spreadRadius: 1.0
+          ),
+        ],
+      ),
       child:
       Column(crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[

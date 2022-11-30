@@ -52,7 +52,7 @@ class _CreateRoomPageState extends State<CreateRoomPage> {
     );
     return Scaffold(
       appBar: AppBar(
-        title: const Text("创建房间"),
+        title: const Text("房间"),
         leading: Builder(builder: (context) {
           return IconButton(
             icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white), //自定义图标

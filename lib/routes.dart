@@ -8,6 +8,7 @@ import './pages/HomePage/ChooseCharacterPage.dart';
 import './pages/HomePage/CreateCharacterPage.dart';
 import './pages/HomePage/CreateScriptPage.dart';
 import './pages/HomePage/CreateRoomPage.dart';
+import './pages/HomePage/JoinRoomPage.dart';
 
 //配置路由,定义Map类型的routes,Key为String类型，Value为Function类型
 final Map<String,Function> routes={
@@ -19,6 +20,7 @@ final Map<String,Function> routes={
   '/createCharacter': (context,{arguments})=>const CreateCharacterPage(),
   '/createScript': (context,{arguments})=>const CreateScriptPage(),
   '/createRoom': (context,{arguments})=>const CreateRoomPage(),
+  '/joinRoom': (context,{arguments})=>const JoinRoomPage(),
 };
 
 //固定写法

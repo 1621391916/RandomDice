@@ -82,16 +82,16 @@ class JoinRoomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: (){},
+      onPressed: (){Navigator.pushNamed(context, '/createRoom');},
       style: ButtonStyle(
         textStyle: MaterialStateProperty.all(const TextStyle(fontSize: 15)),
-        backgroundColor: MaterialStateProperty.all(Colors.green[500]),
+        backgroundColor: MaterialStateProperty.all(Colors.orange),
         minimumSize: MaterialStateProperty.all(const Size(50, 40)),
         shape: MaterialStateProperty.all(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))//圆角弧度
         ),
       ),
-      child: const Text("前往组团"),
+      child: const Text("前往房间"),
     );
   }
 }

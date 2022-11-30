@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(16.0),
         children: const <Widget>[
           TopButtonsWidget(),
           RecommendSlidWidget(),
@@ -82,7 +82,7 @@ class MatchButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: (){Navigator.pushNamed(context, '/match');},
+      onPressed: (){Navigator.pushNamed(context, '/joinRoom');},
       style: ButtonStyle(
         textStyle: MaterialStateProperty.all(const TextStyle(fontSize: 30)),
         backgroundColor: MaterialStateProperty.all(Colors.green[500]),
@@ -256,10 +256,10 @@ class RecommendUnit extends StatelessWidget {
       decoration: BoxDecoration(
         // border: Border.all(color: Colors.black26),
         color: Colors.white,
-        borderRadius: BorderRadius.circular((12)),
+        borderRadius: BorderRadius.circular((10)),
         boxShadow: const [
           BoxShadow(
-              color: Color(0xFFD5D5D5),
+              color: Color(0xECDAD8D8),
               offset: Offset(2.0, 2.0),
               blurRadius: 6.0, spreadRadius: 1.0
           ),
