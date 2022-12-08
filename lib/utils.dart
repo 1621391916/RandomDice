@@ -10,3 +10,6 @@ dynamic getImageFromPathOrUrl(String url){
 
   return img;
 }
+
+
+Color X_backgroundColor = const Color(0xffdeecdb);

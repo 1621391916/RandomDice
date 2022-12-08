@@ -15,11 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
+        // fontFamily: 'HuaKangHeiTi'
       ),
       home: const MainFunc(title: 'Flutter Demo Home Page'),
       // initialRoute: '/home',     //初始化的时候加载的路由
       onGenerateRoute: onGenerateRoute
+
     );
   }
 }
@@ -57,21 +59,35 @@ class _MainFuncState extends State<MainFunc> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      extendBody: true,
       body: IndexedStack(
         index: _currentIndex,
         children: pages,
       ),
       bottomNavigationBar: Container(
-        decoration: const BoxDecoration(color: Colors.white),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+          boxShadow: [
+            BoxShadow(
+                color: Color(0xECDAD8D8),
+                offset: Offset(0.0, 0.0),
+                blurRadius: 10.0, spreadRadius: 2.0
+            ),
+          ]
+        ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: 12.0, vertical: 6),
+          padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 4),
           child: GNav(
             style: GnavStyle.google,
             tabBackgroundGradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [Colors.lightBlue[100]!, Colors.cyan],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.green[300]!,
+                Colors.lightGreen,
+                Colors.lightGreen[500]!,
+              ]
             ),
             gap: 8,
             tabBorderRadius: 12,
